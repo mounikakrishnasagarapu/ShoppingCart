@@ -10,24 +10,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.shoopingcart.dao.SupplierDAO;
-import com.niit.shoopingcart.model.Category;
-import com.niit.shoopingcart.model.Supplier;
 import com.niit.shoopingcart.model.Supplier;
 
 public class SupplierDAOImpl implements SupplierDAO {
-
-	private static final String Sid = null;
 	@Autowired
 	SessionFactory sessionFactory;
 	
-    public SupplierDAOImpl(SessionFactory sessionFactory2) {
-		// TODO Auto-generated constructor stub
-	}
-
-	public void supplierDAOImpl(SessionFactory  sessionFactory) {
+	public SupplierDAOImpl(SessionFactory sessionFactory) {
     this.sessionFactory=sessionFactory;
-}
-
+	}
 	@Transactional
 	public boolean save(Supplier supplier) {
 		try {
@@ -54,7 +45,7 @@ public class SupplierDAOImpl implements SupplierDAO {
 	
 	@Transactional
 	public Supplier get(int sid) {
-		String hql = "from supplier where sid=" + sid;
+		String hql = "from"+" Supplier"+" where sid=" + sid;
 	
 		@SuppressWarnings("rawtypes")
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);

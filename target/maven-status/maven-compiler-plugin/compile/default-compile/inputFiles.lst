@@ -5,10 +5,14 @@ C:\devops\workspace\ShoppingCart\src\main\java\com\niit\shoopingcart\dao\impl\Su
 C:\devops\workspace\ShoppingCart\src\main\java\com\niit\shoopingcart\dao\impl\CategoryDAOImpl.java
 C:\devops\workspace\ShoppingCart\src\main\java\com\niit\shoopingcart\dao\CategoryDAO.java
 C:\devops\workspace\ShoppingCart\src\main\java\com\niit\shoopingcart\model\Supplier.java
+C:\devops\workspace\ShoppingCart\src\main\java\com\niit\shoopingcart\model\Login.java
 C:\devops\workspace\ShoppingCart\src\main\java\com\niit\shoopingcart\model\Product.java
 C:\devops\workspace\ShoppingCart\src\main\java\com\niit\shoopingcart\model\Category.java
 C:\devops\workspace\ShoppingCart\src\main\java\com\niit\shoopingcart\controller\CategoryContrroller.java
+C:\devops\workspace\ShoppingCart\src\main\java\com\niit\shoopingcart\controller\LoginController.java
+C:\devops\workspace\ShoppingCart\src\main\java\com\niit\shoopingcart\dao\LoginDAO.java
 C:\devops\workspace\ShoppingCart\src\main\java\com\niit\shoopingcart\controller\HomeController.java
 C:\devops\workspace\ShoppingCart\src\main\java\com\niit\shoopingcart\controller\ProductController.java
 C:\devops\workspace\ShoppingCart\src\main\java\com\niit\shoopingcart\controller\SupplierController.java
 C:\devops\workspace\ShoppingCart\src\main\java\com\niit\shoopingcart\dao\impl\ProductDAOImpl.java
+C:\devops\workspace\ShoppingCart\src\main\java\com\niit\shoopingcart\dao\impl\LoginDAOImpl.java

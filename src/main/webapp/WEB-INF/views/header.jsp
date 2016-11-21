@@ -53,12 +53,15 @@ p {
          </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="Login">Login</a></li>
       </ul>
     </div>
   </div>
 </nav>
- <c:chooose>
+ </body>
+</html>
+
+ <%-- <c:chooose>
  <c:when test="${UserClickedProduct}">
  <c:import url=/WEB-INF/views/product.jsp"></c:import>
  </c:when>
@@ -73,6 +76,10 @@ p {
  <c:import url=/WEB-INF/views/category.jsp"></c:import>
  </c:when>
  </c:chooose>
-</body>
-</html>
+ <c:chooose>
+ <c:when test="${UserClickedLogin}">
+ <c:import url=/WEB-INF/views/login.jsp"></c:import>
+ </c:when>
+ </c:chooose>
+ --%>
 

@@ -14,13 +14,13 @@
 <hr>
 ${errorMessage}
 ${registerMessage}
-<c:if test="${UserClickedLogin}">
+<%-- <c:if test="${UserClickedLogin}">
 <jsp:include page="login.jsp"></jsp:include>
-</c:if>
+</c:if> --%>
 <c:if test="${UserClickedRegister}">
 <jsp:include page="register.jsp"></jsp:include>
 </c:if>
-<c:if test="${UserClickedProduct}">
+<%-- <c:if test="${UserClickedProduct}">
 <jsp:include page="product.jsp"></jsp:include>
 </c:if>
 <c:if test="${UserClickedSupplier}">
@@ -28,6 +28,6 @@ ${registerMessage}
 </c:if>
 <c:if test="${UserClickedCategory}">
 <jsp:include page="category.jsp"></jsp:include>
-</c:if>
+</c:if> --%>
 </body>
 </html>

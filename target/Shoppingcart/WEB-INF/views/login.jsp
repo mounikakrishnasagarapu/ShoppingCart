@@ -1,44 +1,73 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib   uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html lang="en-US">
+<head><title>Login</title>
 </head>
 <body>
-<form action="validate">
+<%-- <c:url var="addAction" value="addLogin" ></c:url> --%>
 
-
-User ID:<input type="text" name="userID">
-Password:<input type="password" name="password">
-<input type="submit" value="login">
-
-
-
-</form>
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</body>
-</html>
+<form:form action="addLogin" modelAttribute="login" lid="btn-add">
+   <h3>
+                    <c:if test="${login.lid==0}">
+		       Add New Item
+	            </c:if>
+	            
+	            <c:if test="${!empty login.lid}">
+		      Update Item for LId: <c:out value="${login.lid}"/>
+		     <%--  <form:hidden path="lid"/> --%>
+	            </c:if>
+	            
+   </h3> 
+        
+	  <table>
+	  
+	  <tr>  <c:if test="${login.lid!=0}">
+	  <td> Id:</td> <td><form:input  path="lid"/></td> 
+	   </c:if>
+	    <tr> <td> Name:</td> <td><form:input  path="lname"/></td> 
+	    <tr> <td>Password:</td> <td><form:input path="password"/> </td> 
+	     
+		
+  
+	    <tr> <td colspan="2">
+    	        <c:if test="${login.lid==0}">
+			      <input type="submit" value="Add" lid="btn-add"> 
+	         </c:if>
+	         <c:if test="${login.lid!=0}">
+			      <input type="submit" value="Update" lid="btn-update"> 
+	         </c:if>
+		</td> 
+		<tr> <td colspan="2" class="success-msg">
+		   <c:out value="${msg}"/>
+		</td> 
+	  </table>
+	  
+	  
+	  
+	  
+	  <table>   
+		 <tr>	 <td> ID </td>
+		        	 <td> Name </td>
+				 <td> Password</td>
+				 
+				  
+	      	</tr>
+    	      <c:forEach var="obj" items="${listlogin}">
+		      <tr>
+		                 <td> <c:out value="${obj.lid}"/> </td>
+		                 <td> <c:out value="${obj.lname}"/> </td>
+				 <td> <c:out value="${obj.password}"/> </td>
+				 
+				
+				 <td> <a href="deleteBylId/${obj.lid}">Delete </a> |
+				     <a href="editBylId/${obj.lid}">Edit</a> 
+				 </td>
+		      </tr>
+	      </c:forEach>
+          </table> 
+          
+          
+          
+          
+ </form:form>

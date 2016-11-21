@@ -14,12 +14,16 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import com.niit.shoopingcart.dao.ProductDAO;
 import com.niit.shoopingcart.dao.SupplierDAO;
 import com.niit.shoopingcart.dao.CategoryDAO;
+import com.niit.shoopingcart.dao.LoginDAO;
 import com.niit.shoopingcart.dao.impl.ProductDAOImpl;
 import com.niit.shoopingcart.dao.impl.SupplierDAOImpl;
 import com.niit.shoopingcart.dao.impl.CategoryDAOImpl;
+import com.niit.shoopingcart.dao.impl.LoginDAOImpl;
 import com.niit.shoopingcart.model.Product;
 import com.niit.shoopingcart.model.Supplier;
 import com.niit.shoopingcart.model.Category;
+import com.niit.shoopingcart.model.Login;
+
 
 
 @Configuration
@@ -61,6 +65,7 @@ public class AppllicationContextConfig {
 		sessionBuilder.addAnnotatedClasses(Product.class);
 		sessionBuilder.addAnnotatedClasses(Supplier.class);
 		sessionBuilder.addAnnotatedClasses(Category.class);
+		sessionBuilder.addAnnotatedClasses(Login.class);
 	System.out.println("Session");
 	return sessionBuilder.buildSessionFactory();
 		
@@ -93,5 +98,11 @@ public class AppllicationContextConfig {
 	public SupplierDAO getsupplierDao(SessionFactory sessionFactory) {
 			return   new SupplierDAOImpl(sessionFactory);
 	}
-
+	@Autowired
+	@Bean(name = "loginDAO")
+	public LoginDAO getLoginDao(SessionFactory sessionFactory)
+	{
+		return new LoginDAOImpl(sessionFactory);
+	}
+			
 }

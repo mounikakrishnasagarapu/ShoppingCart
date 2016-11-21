@@ -29,7 +29,6 @@ p {
 </style>
 </head>
 </html>
-
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -54,12 +53,11 @@ p {
          </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="Login">Login</a></li>
       </ul>
     </div>
   </div>
 </nav>
-
  <c:chooose>
  <c:when test="${UserClickedProduct}">
  <c:import url=/WEB-INF/views/product.jsp"></c:import>
@@ -75,14 +73,11 @@ p {
  <c:import url=/WEB-INF/views/category.jsp"></c:import>
  </c:when>
  </c:chooose>
- <div class="container">
-  <<!-- img src="C:\devops\workspace\ShoppingCart\target\Shoppingcart\WEB-INF\images\3957xitefun-beautiful-flowers-01.jpg" alt="nature-simple-background-sea.jpg" width="304" height="236">
-  </img> -->
-  <a href="images.jpg" class="thumbnail">
-     <!--  <p>Pulpit Rock: A famous tourist attraction in Forsand, Ryfylke, Norway.</p>  -->
-      <img src="C:\devops\workspace\ShoppingCart\images\images.jpg" alt="images" style="width:150px;height:150px">
-    </a>
-</div>
+ <c:chooose>
+ <c:when test="${UserClickedLogin}">
+ <c:import url=/WEB-INF/views/login.jsp"></c:import>
+ </c:when>
+ </c:chooose>
 </body>
 </html>
 

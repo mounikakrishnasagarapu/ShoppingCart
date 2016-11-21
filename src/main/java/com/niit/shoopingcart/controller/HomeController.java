@@ -76,20 +76,20 @@ public  ModelAndView product(Model model)
 	model.addAttribute("UserClickedProduct","true");
 	return mo;
 }
-/*@RequestMapping("/suppliers")
+@RequestMapping("/suppliers")
 public  ModelAndView suppliers(Model model)
 {
 	ModelAndView mo=new ModelAndView("index");
 	model.addAttribute("UserClickedSuppliers","true");
 	return mo;
-}*/
-/*@RequestMapping("/home")
+}
+@RequestMapping("/home")
 public  ModelAndView home(Model model)
 {
 	ModelAndView mo=new ModelAndView("index");
 	model.addAttribute("UserClickedHome","true");
 	return mo;
-}*/
+}
 
 
 @RequestMapping("/registerHere")

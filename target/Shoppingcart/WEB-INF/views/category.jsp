@@ -5,7 +5,6 @@
 <head><title>category</title>
 </head>
 <body>
-
  <c:url var="addAction" value="addCategory" ></c:url>
 
 <form:form action="${addAction}" modelAttribute="category" cid="btn-add">
@@ -20,7 +19,6 @@
 	            </c:if>
 	            
    </h3> 
-   
         
 	  <table>
 	  
