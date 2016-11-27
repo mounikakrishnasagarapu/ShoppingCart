@@ -20,14 +20,15 @@ ${registerMessage}
 <c:if test="${UserClickedRegister}">
 <jsp:include page="register.jsp"></jsp:include>
 </c:if>
-<c:if test="${UserClickedProduct}">
+<c:if test="${UserClickedCategory}">
+<jsp:include page="Category.jsp"></jsp:include>
+</c:if> 
+<%-- <c:if test="${UserClickedProduct}">
 <jsp:include page="product.jsp"></jsp:include>
 </c:if>
 <c:if test="${UserClickedSupplier}">
 <jsp:include page="supplier.jsp"></jsp:include>
-</c:if>
-<c:if test="${UserClickedCategory}">
-<jsp:include page="category.jsp"></jsp:include>
-</c:if> 
+</c:if> --%>
+
 </body>
 </html>

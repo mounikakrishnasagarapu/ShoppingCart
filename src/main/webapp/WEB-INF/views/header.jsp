@@ -7,11 +7,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-<body>
-<!DOCTYPE html>
-<html>
-<head>
 <style>
 body {
     background-color: lightblue;
@@ -28,7 +23,7 @@ p {
 }
 </style>
 </head>
-</html>
+
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -58,28 +53,20 @@ p {
     </div>
   </div>
 </nav>
+
+<c:choose>
+<c:when test="${UserClickedCategory}">
+<c:import url="/WEB-INF/views/Category.jsp"></c:import>
+</c:when>
+</c:choose> 
+ <c:choose>
+<c:when test="${UserClickedSupplier}">
+<c:import url="/WEB-INF/views/Supplier.jsp"></c:import>
+</c:when>
+</c:choose> 
  </body>
 </html>
 
- <%-- <c:chooose>
- <c:when test="${UserClickedProduct}">
- <c:import url=/WEB-INF/views/product.jsp"></c:import>
- </c:when>
- </c:chooose>
-  <c:chooose>
- <c:when test="${UserClickedSupplier}">
- <c:import url=/WEB-INF/views/supplier.jsp"></c:import>
- </c:when>
- </c:chooose>
-<c:chooose>
- <c:when test="${UserClickedCategory}">
- <c:import url=/WEB-INF/views/category.jsp"></c:import>
- </c:when>
- </c:chooose>
- <c:chooose>
- <c:when test="${UserClickedLogin}">
- <c:import url=/WEB-INF/views/login.jsp"></c:import>
- </c:when>
- </c:chooose>
- --%>
+  
+ 
 
