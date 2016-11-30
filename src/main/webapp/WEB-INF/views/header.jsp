@@ -64,6 +64,13 @@ p {
 <c:import url="/WEB-INF/views/Supplier.jsp"></c:import>
 </c:when>
 </c:choose> 
+<c:choose>
+<c:when test="${UserClickedProduct}">
+<c:import url="/WEB-INF/views/Product.jsp"></c:import>
+</c:when>
+</c:choose> 
+
+
  </body>
 </html>
 

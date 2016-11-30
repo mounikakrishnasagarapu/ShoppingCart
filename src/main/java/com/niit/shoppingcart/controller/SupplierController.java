@@ -14,6 +14,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.niit.shoppingcart.dao.SupplierDAO;
 import com.niit.shoppingcart.model.Supplier;
 
+
+
+
 @Controller
 public class SupplierController {
 	@Autowired
@@ -37,7 +40,7 @@ public class SupplierController {
 		return "redirect:/Supplier";
 		
 	}
-	@RequestMapping(value="/EditBySid/{id}",method = RequestMethod.GET)
+	@RequestMapping(value="/EditByid/{id}",method = RequestMethod.GET)
 	public String editItem(@PathVariable("id") int id, RedirectAttributes attributes) {
 		System.out.println("editSupplier");
 		attributes.addFlashAttribute("supplier", this.supplierDAO.get(id));
