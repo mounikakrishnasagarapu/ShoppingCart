@@ -13,15 +13,23 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.niit.shoppingcart.dao.CartDAO;
 import com.niit.shoppingcart.dao.CategoryDAO;
 import com.niit.shoppingcart.dao.ProductDAO;
 import com.niit.shoppingcart.dao.SupplierDAO;
+import com.niit.shoppingcart.dao.UserDAO;
+import com.niit.shoppingcart.daoimpl.CartDAOImpl;
 import com.niit.shoppingcart.daoimpl.CategoryDAOImpl;
+import com.niit.shoppingcart.daoimpl.CheckoutDAOImpl;
 import com.niit.shoppingcart.daoimpl.ProductDAOImpl;
 import com.niit.shoppingcart.daoimpl.SupplierDAOImpl;
+import com.niit.shoppingcart.daoimpl.UserDAOImpl;
+import com.niit.shoppingcart.model.Cart;
 import com.niit.shoppingcart.model.Category;
+import com.niit.shoppingcart.model.Checkout;
 import com.niit.shoppingcart.model.Product;
 import com.niit.shoppingcart.model.Supplier;
+import com.niit.shoppingcart.model.User;
 
 
 
@@ -62,6 +70,9 @@ public class Applicationcontextconfig {
 			sessionBuilder.addAnnotatedClasses(Supplier.class);
 			sessionBuilder.addAnnotatedClasses(Category.class);
 			sessionBuilder.addAnnotatedClasses(Product.class);
+			sessionBuilder.addAnnotatedClasses(User.class);
+			sessionBuilder.addAnnotatedClasses(Cart.class);
+			sessionBuilder.addAnnotatedClasses(Checkout.class);
 	
 		
 			System.out.println("Session");
@@ -97,4 +108,20 @@ public class Applicationcontextconfig {
 		public ProductDAO getProductDao(SessionFactory sessionFactory){
 			return  new ProductDAOImpl(sessionFactory);	
 				}
+		@Autowired
+		@Bean(name = "UserDAO")
+		public UserDAO getUserDao(SessionFactory sessionFactory){
+			return  new UserDAOImpl(sessionFactory);	
+}
+		@Autowired
+		@Bean(name = "cartDAO")
+		public CartDAO getCartDAO(SessionFactory sessionFactory) {
+				return new CartDAOImpl(sessionFactory);
+		}
+
+@Autowired
+@Bean(name = "checkoutDAO")
+public CheckoutDAOImpl getCheckoutDAO(SessionFactory sessionFactory) {
+		return new CheckoutDAOImpl(sessionFactory);
+}
 }

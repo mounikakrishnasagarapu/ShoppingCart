@@ -1,78 +1,39 @@
 package com.niit.shoppingcart.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import javax.servlet.http.HttpSession;
-
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.niit.shoppingcart.dao.CategoryDAO;
+import com.niit.shoppingcart.dao.ProductDAO;
+import com.niit.shoppingcart.model.Product;
 
 
 @Controller
 public class HomeController {
-
-	@RequestMapping("/")
-	public String gotoHome()
-	{
-		return "index";
-	}
-
-	@RequestMapping("/register")
-	public String register(Model m)
-	{
-		m.addAttribute("registerMessage","your successfully logged in");
-		return "index";
+	@Autowired
+	ProductDAO productDAO;
+	
+	@Autowired
+	CategoryDAO categoryDAO;
+	
+    
 		
-	}
-@RequestMapping("/validate")
-public String validate(@RequestParam(name="userID") String id, @RequestParam(name="password") String pwd, Model model,HttpSession session)
-{
-if (id.equals("niit") && pwd.equals("niit"))
-	{
-		/*model.addAttribute("SucessMessage","You sucessfully logged in");*/
-		session.setAttribute("SucessMessage","You sucessfully logged in");
-		return "success";
-	}
-else 
-{
-		model.addAttribute("errorMessage","Invalid Credentials... please try again");
-		return "index";
-}
-
-//SPA
-}
-
-@RequestMapping("/login")
-public  ModelAndView login(Model model)
-{
-	ModelAndView mv=new ModelAndView("index");
-	model.addAttribute("UserClickedLogin","true");
-	return mv;
-}
-@RequestMapping("/logout")
-public  ModelAndView logout(Model model)
-{
-	ModelAndView mo=new ModelAndView("index");
-	model.addAttribute("UserClickedLogout","true");
-	return mo;
-}
-
-@RequestMapping("/home")
-public  ModelAndView home(Model model)
-{
-	ModelAndView mo=new ModelAndView("index");
-	model.addAttribute("UserClickedhome","true");
-	return mo;
-}
-
-
-@RequestMapping("/registerHere")
-public ModelAndView registerHere()
-{
-	ModelAndView mr=new ModelAndView("index");
-	mr.addObject("UserClickedRegister","true");
-	return mr;
-
-}
+	    @RequestMapping("/")
+	    public String homepage(Model m){
+	    	m.addAttribute("product", new Product());
+	    	m.addAttribute("categoryList", categoryDAO.list());
+	    	m.addAttribute("productList", productDAO.list());
+	    	return "index";
+	    }
+	    @RequestMapping(value ="ShowProduct/{id}" )
+	    public String ShowProduct(@PathVariable("id") int id,RedirectAttributes attributes,Model m) {
+	        m.addAttribute("UserClickedshowproduct", "true");
+	    	m.addAttribute("IndividualProduct", productDAO.getproduct(id));
+	    	return "ShowProduct";
+	    }
+	   
 }

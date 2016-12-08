@@ -127,7 +127,7 @@ body  {
 						<td id="td1"><c:out value="${product.supplierid}" />
 						<td><div class="thumbnail">
 								<img height="100px" width="100px" alt="${product.id }"
-									src="<c:url value="/images/${product.id }.jpg"></c:url>">
+									src="<c:url value="/resources/images/${product.id }.jpg"></c:url>">
 							</div>
 						<td id="td1"><a href="addupdateproduct/${product.id }"class="btn btn-info btn-lg">
           <span class="glyphicon glyphicon-edit"></span> Edit

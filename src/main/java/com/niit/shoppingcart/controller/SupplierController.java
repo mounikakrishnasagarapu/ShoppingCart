@@ -47,7 +47,7 @@ public class SupplierController {
 		
 		return "redirect:/Supplier";
 	}	
-	@RequestMapping(value="/DeleteBySid/{id}",method = RequestMethod.GET)
+	@RequestMapping(value="/DeleteByid/{id}",method = RequestMethod.GET)
 	public String deleteItem(@PathVariable("id") int id)
 	{
 		supplierDAO.delete(id);
