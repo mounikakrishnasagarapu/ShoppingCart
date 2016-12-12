@@ -50,7 +50,7 @@ http://www.springframework.org/schema/security/spring-security.xsd">
         authentication-success-forward-url="/login_session_attributes" />
         
     <security:logout logout-url="/perform_logout"
-    	invalidate-session="true" logout-success-url="/index"/>
+    	invalidate-session="true" logout-success-url="/"/>
     	
     <security:csrf disabled="true" />
     

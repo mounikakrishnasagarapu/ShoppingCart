@@ -56,7 +56,7 @@ public class ProductController {
 	}
 @RequestMapping(value ="Product" )
 	public ModelAndView ProductPage(@ModelAttribute("product") Product product,BindingResult result) {
-		ModelAndView mv= new ModelAndView("/index");
+		ModelAndView mv= new ModelAndView("/Admin");
 		//mv.addObject("product", new Product());
 		mv.addObject("productList", productDAO.list());
 		mv.addObject("categoryList",categoryDAO.list());

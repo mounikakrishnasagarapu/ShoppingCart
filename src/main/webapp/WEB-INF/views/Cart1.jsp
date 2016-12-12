@@ -58,13 +58,13 @@ body {
       </li>
       
     
-      <li><a href="index">HOME</a></li>
+      <!-- <li><a href="index">HOME</a></li> -->
        <sec:authorize access="!isAuthenticated()">
       <li><a href="Registration">REGISTER</a></li>
       <li><a href="Login">LOGIN</a></li>
       </sec:authorize>
-	  <li><a href="ABOUTUS">ABOUT US</a></li>
-	  <li><a href="CONTACTUS">CONTACT US</a></li>
+	  <!-- <li><a href="ABOUTUS">ABOUT US</a></li>
+	  <li><a href="CONTACTUS">CONTACT US</a></li> -->
    <sec:authorize access="isAuthenticated()">
    <li ><a href="Cart1" ><p>CART <span class="glyphicon glyphicon-shopping-cart"></span></p></a></li>
 	<li><a href="<c:url value="/perform_logout" />"><p>LOGOUT<span class="glyphicon glyphicon-log-out"></span></p></a></li>
@@ -148,7 +148,7 @@ body {
 										<div class="col-xs-4" style="padding-top: 22px">
 											<form action="editorder/${cart.id}">
 												<div class="col-xs-6">
-													<input type="text" class="form-control input-sm"
+													<input type="text" class="form-contfrol input-sm"
 														value="${cart.quantity}" name="quantity">
 												</div>
 												<div class="col-xs-6" >
@@ -171,7 +171,7 @@ body {
 						<div class="panel-footer">
 							<div class="row text-center">
 								<div class="col-xs-3">
-									<a href="index" class="btn btn-primary btn-sm btn-block">Continue
+									<a href="Registration" class="btn btn-primary btn-sm btn-block">Continue
 										Shopping</a>
 								</div>
 								<c:if test="${empty EmptyCart}">

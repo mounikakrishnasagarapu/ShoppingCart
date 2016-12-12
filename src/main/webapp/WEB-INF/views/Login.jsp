@@ -4,12 +4,23 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <style>
-body  {
-   
-    background-color: #ffe6e6  ;
+
+body {
+    background-color: #B8E6FF;
+
 }
 </style>
 <style>
+h1 {
+    color: #FF66CC;
+    text-align: center;
+}
+
+p {
+    font-family: verdana;
+    font-size: 20px;
+}
+
 table {
 	background: #d9d9d9;
 	border-collapse: separate;
@@ -104,8 +115,7 @@ tbody:hover tr:hover td {
 	color: #444;
 	text-shadow: 0 1px 0 #fff;
 } 
-</style>
-<style>
+
 .button {
   display: inline-block;
   border-radius: 4px;
@@ -153,7 +163,7 @@ tbody:hover tr:hover td {
 			<form action="perform_login" method="post">
 			<table>
 				<!--  <h3>New User Details</h3> -->
-				<h4>Existing User/Admin</h4>
+				<h4>Login </h4>
 				<tr>
 			    <td> Name</td>
   		         <div class="col-md-2">

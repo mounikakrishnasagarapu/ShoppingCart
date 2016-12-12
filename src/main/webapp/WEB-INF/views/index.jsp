@@ -33,10 +33,17 @@ p {
 <body>
 
 
+
+
+
+
+
+
+
      	 <div id="templatemo_content">
     
     	<div id="templatemo_content_left">
-    	<h1>ShoppingCart Mounika</h1>
+    	<h1>ShopCart</h1>
     	
      </div>
      </div>
@@ -92,42 +99,98 @@ p {
 
 
 
-<div class="w3-content w3-display-container">
-  <img class="mySlides" src="C:\devops\workspace\ShoppingCart\src\main\webapp\resources\images\fantasy-book-cover.jpg" style="width:70%">
-  
-  <img class="mySlides" src="C:\devops\workspace\ShoppingCart\src\main\webapp\resources\images\inspiring-ideas-beautiful-best-tv-stands-for-wall-mounted-tv-tv-wall-mount-vs-tv-stand-tv-stand-for-under-wall-mounted-tv-tv-stand-for-wall-mounted-flat-screen-tv-tv-cabinet-for-.jpg" style="width:50%">
-  <img class="mySlides" src="C:\devops\workspace\ShoppingCart\src\main\webapp\resources\images\fantasy-book-cover.jpg" style="width:70%">
-  <img class="mySlides" src="img_forest.jpg" style="width:100%">
+</script>
+<!DOCTYPE html>
+<html>
+<head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>mounika online</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 70%;
+      margin: auto;
+  }
+  </style>
+</head>
+<body>
 
-  <a class="w3-btn-floating w3-display-left" onclick="plusDivs(-1)">&#10011;</a>
-  <a class="w3-btn-floating w3-display-right" onclick="plusDivs(1)">&#10011;</a>
+<div class="container">
+  <br>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+
+      <div class="item active">
+        <img src="C:\devops\workspace\ShoppingCart\src\main\webapp\resources\images\painting.jpg" alt="site" width="300" height="200">
+        <div class="carousel-caption">
+          <
+                  </div>
+      </div>
+
+      <div class="item">
+        <img src="C:\devops\workspace\ShoppingCart\src\main\webapp\resources\images\fantasy-book-cover.jpg" alt="" width="300" height="200">
+        <div class="carousel-caption">
+          
+       
+        </div>
+      </div>
+    
+      <div class="item">
+        <img src="C:\devops\workspace\ShoppingCart\src\main\webapp\resources\images\inspiring-ideas-beautiful-best-tv-stands-for-wall-mounted-tv-tv-wall-mount-vs-tv-stand-tv-stand-for-under-wall-mounted-tv-tv-stand-for-wall-mounted-flat-screen-tv-tv-cabinet-for-.jpg" alt="" width="300" height="200">
+        <div class="carousel-caption">
+          
+         
+        </div>
+      </div>
+    
+      <div class="item">
+        <img src="C:\devops\workspace\ShoppingCart\src\main\webapp\resources\images\sony-design_sf.jpg" alt="" width="300" height="200">
+        <div class="carousel-caption">
+      
+      
+                 
+        </div>
+      </div>
+  
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
 </div>
 
-<script>
-var slideIndex = 1;
-showDivs(slideIndex);
+</body>
+</html>
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
-
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";  
-  }
-  x[slideIndex-1].style.display = "block";  
-}
-</script>
 
  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Online Shopping Website Mounika</title>
+<title>shopcart Website </title>
 <meta name="keywords" content="free website template, flower shop, website templates, CSS, HTML" />
 <meta name="description" content="Flower Shop - free website template, W3C compliant HTML CSS layout" />
 <link href="templatemo_style.css" rel="stylesheet" type="text/css" />

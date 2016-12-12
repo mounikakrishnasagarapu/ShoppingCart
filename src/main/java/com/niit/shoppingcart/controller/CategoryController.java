@@ -23,7 +23,7 @@ public class CategoryController {
 	@RequestMapping(value="/Category")
 	public ModelAndView getAllData(@ModelAttribute("category")Category category,BindingResult result,Model model)
 	{
-		ModelAndView mv=new ModelAndView("/index");
+		ModelAndView mv=new ModelAndView("/Admin");
 	mv.addObject("categoryList",categoryDAO.list());
 	mv.addObject("UserClickedCategory","true");
 		return mv;
