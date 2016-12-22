@@ -5,15 +5,13 @@
       <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
  <html>
 <head>
-
-
-  <meta charset="utf-8">
+ <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  
+  </head>
   <style>
 body {
     background-color: lightblue;
@@ -29,53 +27,42 @@ p {
     font-size: 20px;
 }
 </style>
-</head>
+
 <body>
-
-
-
-
-
-
-
-
-
-     	 <div id="templatemo_content">
+<!--  <div id="templatemo_content">
     
-    	<div id="templatemo_content_left">
+    	<div id="templatemo_content_left"> -->
     	<h1>ShopCart</h1>
     	
-     </div>
-     </div>
- 
+     
     
      
 
- <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-<body>
+ 
+
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">mounikaonline</a>
+      <ul class="nav navbar-nav">
+            <!-- <li class="active"><a href="#">Home</a></li> </ul>    -->
+             <!--   <ul class="nav navbar-nav navbar-right" style="margin-bottom:0px;"> -->
+             <li class="dropdown" >
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories
+              <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+        <li>
+          <c:forEach items="${categoryList}" var="obj">
+          
+				<a href="navproduct/${obj.id }"><c:out value="${obj.name}" /></a>
+							<br>
+						
+					</c:forEach>
+					</li>
+        </ul>
     </div>
-  <%--  <ul>
-           <sec:authorize access="!isAuthenticated()">
-    
-      <li><a href="Registration"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li><br>
-      <li><a href="Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li></ul>
-      </sec:authorize>
-      <sec:authorize access="isAuthenticated()">
-     <ul class="nav navbar-nav navbar-right">
-      <li><a href="Cart"><span class="glyphicon glyphicon-user"></span>Cart</a></li>
-	<li><a href="<c:url value="/perform_logout" />">Logout</a></li>
-	<li><a href="">Welcome  <sec:authentication property="principal.username"/></a></li></ul>
-</sec:authorize></ul></div> --%>
+ 
  <ul class="nav navbar-nav navbar-right">
     <sec:authorize access="!isAuthenticated()">
     
@@ -137,14 +124,14 @@ p {
     <div class="carousel-inner" role="listbox">
 
       <div class="item active">
-        <img src="C:\devops\workspace\ShoppingCart\src\main\webapp\resources\images\painting.jpg" alt="site" width="300" height="200">
+        <img src="C:\devops\workspace\ShoppingCart\src\main\webapp\resources\images\vpcw125ag-p-1.jpg" alt="site" width="300" height="200">
         <div class="carousel-caption">
           <
                   </div>
       </div>
 
       <div class="item">
-        <img src="C:\devops\workspace\ShoppingCart\src\main\webapp\resources\images\fantasy-book-cover.jpg" alt="" width="300" height="200">
+        <img src="C:\devops\workspace\ShoppingCart\src\main\webapp\resources\images\10729smartphone-samsung-galaxy-core-2-duos-dual-chip-3gandroid-4.4-cam.-5mp-tela-4-5-34-proc.-quad-core-086774600.jpg" alt="" width="200" height="100">
         <div class="carousel-caption">
           
        
@@ -193,7 +180,7 @@ p {
 <title>shopcart Website </title>
 <meta name="keywords" content="free website template, flower shop, website templates, CSS, HTML" />
 <meta name="description" content="Flower Shop - free website template, W3C compliant HTML CSS layout" />
-<link href="templatemo_style.css" rel="stylesheet" type="text/css" />
+<!-- <link href="templatemo_style.css" rel="stylesheet" type="text/css" /> -->
 
 </head>
 
@@ -207,8 +194,9 @@ ${registerMessage}
   <c:if test="${UserClickedLogin}">
 <jsp:include page="Login.jsp"></jsp:include>
 </c:if>
- <c:if test="${userClickedRegistration}">
-<jsp:include page="Registration.jsp"></jsp:include></c:if> 
+ <c:if test="${UserClickedRegistration}">
+<jsp:include page="Registration.jsp"></jsp:include>
+</c:if> 
  
 <c:if test="${UserClickedCategory}">
 <jsp:include page="Category.jsp"></jsp:include></c:if> 
@@ -216,8 +204,7 @@ ${registerMessage}
 <jsp:include page="Supplier.jsp"></jsp:include></c:if>
 <c:if test="${UserClickedProduct}">
 <jsp:include page="Product.jsp"></jsp:include></c:if>
- <c:if test="${UserClickedRegister}">
-<jsp:include page="Registration.jsp"></jsp:include></c:if>
+ 
  <c:if test="${UserClickedAdmin}">
 <jsp:include page="Admin.jsp"></jsp:include></c:if>       
 <c:forEach items="${productList}" var="product">
@@ -280,11 +267,10 @@ ${registerMessage}
 		</c:when>
 		</c:choose>
 <%-- <c:choose>
-		<c:when test="${IfMakePaymentClicked}">
-			<c:import url="/WEB-INF/views/thanks.jsp">
-			</c:import>
+		<c:when test="${userClickedRegistration}">
+			<c:import url="/WEB-INF/views/Registration.jsp"></c:import>
 		</c:when>
-		</c:choose> --%>
+	</c:choose> --%>
 		<div ng-view></div>
 
 	<script>
@@ -297,11 +283,7 @@ ${registerMessage}
 		});
 	</script>
 
-	<c:choose>
-		<c:when test="${UserClickedAdmin}">
-			<c:import url="/WEB-INF/views/Admin.jsp"></c:import>
-		</c:when>
-	</c:choose>
+	
 </body>
 </html>
   

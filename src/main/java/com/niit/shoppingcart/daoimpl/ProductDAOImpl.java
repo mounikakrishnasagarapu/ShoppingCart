@@ -90,6 +90,16 @@ public class ProductDAOImpl implements ProductDAO {
 				return false;
 			}
 		}
+
+
+		@SuppressWarnings({ "unchecked", "rawtypes" })
+		@Transactional
+		public List<Product> navproduct(int id) {
+			String hql = "from Product where categoryid= "+id;
+			Query query = sessionFactory.getCurrentSession().createQuery(hql);
+			List<Product> catproducts = (List<Product>) query.list();
+			return catproducts;
+		}
 }
 
 

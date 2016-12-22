@@ -33,7 +33,7 @@ ${message}
        
     </ul>
     <ul class="nav navbar-nav navbar-right" style="margin-bottom:-2px;"> 
-       <li><a href="Home">CONTACT US</a></li>  
+    <!--    <li><a href="Home">CONTACT US</a></li>   -->
 	  <li><a href="perform_logout">LOGOUT</a></li>
 
 					  

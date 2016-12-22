@@ -12,8 +12,8 @@ body  {
     background-color: #ffe6e6  ;
 }
 </style>
-<body>
-<style>
+
+ <style>
 table {
 	background: #d9d9d9;
 	border-collapse: separate;
@@ -150,7 +150,7 @@ tbody:hover tr:hover td {
   right: 0;
 }
 </style>
-
+ <body>
 	${message}
 	<div class="text-center myForm">
 	<div align="center">
@@ -161,10 +161,8 @@ tbody:hover tr:hover td {
 				method="post">
 				
 				<table>
-				<!--  <h3>New User Details</h3> -->
-				<h4>Registration</h4>
-				<tr>
-			    <td> Name</td>
+				
+				 <tr><td> Name</td>
   		         <div class="col-md-2">
 					<td><form:input path="name" type="text" placeholder="Name"
 						pattern=".{5,10}" required="true" id="username" name="username" 
