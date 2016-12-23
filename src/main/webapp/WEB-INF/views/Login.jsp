@@ -11,7 +11,7 @@ body {
 }
 </style>
 <style>
-/* h1 {
+ h1 {
     color: #FF66CC;
     text-align: center;
 }
@@ -154,7 +154,7 @@ tbody:hover tr:hover td {
 .button:hover span:after {
   opacity: 1;
   right: 0;
-} */
+} 
 </style>
 <head>
 <body style="padding-top:">

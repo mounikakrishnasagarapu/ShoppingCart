@@ -183,7 +183,30 @@ p {
 <!-- <link href="templatemo_style.css" rel="stylesheet" type="text/css" /> -->
 
 </head>
+<c:forEach items="${productList}" var="product">
+			<tr>
 
+
+				<td>
+					<!-- --<div class="thumbnail">-->
+					<div class="col-md-4">
+						<a href="ShowProduct/${product.id}"> <img height="150px"
+							width="150px" alt="${product.id }"
+							src="<c:url value="/resources/images/${product.id }.jpg"></c:url>"></a>
+
+						<td><c:url var="action" value="addtocart/${product.id}"></c:url>
+							<form:form action="${action}" modelAttribute="cart">
+								<td id="td1"><c:out value="${product.name}" /><br>
+								<td id="td1"><c:out value="${product.price}" /> <input
+									type="submit" class="btn btn-primary" value="Add To Cart" /><br>
+							</form:form></td>
+						<br>
+
+					</div>
+			</tr>
+			</td>
+		</c:forEach>
+	</div>
    ${errorMessage} 
 ${registerMessage}
 <!-- if the error message is there, i have to open login.jsp -->
@@ -207,29 +230,7 @@ ${registerMessage}
  
  <c:if test="${UserClickedAdmin}">
 <jsp:include page="Admin.jsp"></jsp:include></c:if>       
-<c:forEach items="${productList}" var="product">
-			<tr>
 
-
-				<td>
-					<div class="thumbnail">
-					<div class="col-md-4">
-						<a href="ShowProduct/${product.id}"> <img height="150px"
-							width="150px" alt="${product.id }"
-							src="<c:url value="/resources/images/${product.id }.jpg"></c:url>"></a>
-
-						<td><c:url var="action" value="addtocart/${product.id}"></c:url>
-							<form:form action="${action}" modelAttribute="cart">
-								<td id="td1"><c:out value="${product.name}" /><br>
-								<td id="td1"><c:out value="${product.price}" /> <input
-									type="submit" class="btn btn-primary" value="Add To Cart" /><br>
-							</form:form></td>
-						<br>
-
-					</div>
-			</tr>
-			</td>
-		</c:forEach>
 	</div>
 
 	<div ng-view></div>

@@ -131,7 +131,7 @@ body {
 										<div class="col-xs-6">
 										<a href="IndividualItem/${cart.productid}">
 											<img height="72px" width="72px"  alt="${cart.productid}"
-											src="<c:url value="/resources/images/product/${cart.productid}.jpg"></c:url>">
+											src="<c:url value="/resources/images/${cart.productid}.jpg"></c:url>">
 											</a>
 										</div>
 										<div class="col-xs-6" style="padding-top: 22px" >
